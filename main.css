@@ -1,0 +1,82 @@
+html body{
+    color: #2D2937;
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+}
+
+.navbar, .navbar a{
+    background-color: #2D2937;
+    color: #AA92FB!important;
+}
+
+h3 > span:first-of-type{
+    font-size: 0.5em;
+}
+
+h3 a, h3 i{
+    color: #AA92FB;
+}
+
+h3 a:hover{
+    color: #40537A;
+    text-decoration: none;
+}
+
+
+#row #topRow td, #row td:nth-child(1){
+    background-color: #2D2937!important;
+    color: #AA92FB!important;
+    text-align: center;
+    border: 1px solid #AA92FB;
+    font-weight: bold;
+    width: 5px;
+
+}
+
+#row td{
+    background-color: #ddd5f9;
+    color: #40537A;
+    text-align: center;
+    width: 5px;
+    height: 5px;
+}
+
+#row tr:nth-child(2n) td:nth-of-type(2n){
+    background-color: #f9f7ff;
+    text-align: center;
+
+}
+
+#row tr:nth-child(2n+1) td:nth-of-type(2n+1){
+    background-color: #f9f7ff;
+    text-align: center;
+}
+
+.btn-default{
+    background-color: #AA92FB!important;
+    color: #2D2937!important;
+}
+
+.red{
+    border-color: #dc3545!important;
+    color: #dc3545;
+}
+
+.green{
+    border-color: green!important;
+}
+
+
+.valid{
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+}
+
+.main-table{
+    overflow-x: scroll;
+}
+
+.table #td{
+    padding: 0.5rem!important;
+}
