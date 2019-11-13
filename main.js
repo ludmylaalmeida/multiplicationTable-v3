@@ -105,7 +105,7 @@ function displayTable() {
 
   let tb_header = document.getElementById("topRow");
   let x = tb_header.insertCell();
-  x.innerHTML = "-";
+  x.innerHTML = "x";
   //get the array for the horizontal and add that row
   for (let i = smallest_hr; i <= largest_hr; i++) {
     hr_array.push(i);
