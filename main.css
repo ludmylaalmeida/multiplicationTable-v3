@@ -1,82 +1,86 @@
-html body{
-    color: #2D2937;
-    font-family: 'Nunito', sans-serif;
-    overflow-x: hidden;
+/* 
+ Assignment: Creating an Interactive Dynamic Table
+ File: main.css
+ Ludmyla Almeida, UMass Lowell Computer Science, ludmyla_almeida@student.uml.edu
+ Copyright (c) 2019 by Ludmyla Almeida. All rights reserved. 
+ */
+
+/* main style */
+html body {
+  color: #2d2937;
+  font-family: "Nunito", sans-serif;
+  overflow-x: hidden;
 }
 
-.navbar, .navbar a{
-    background-color: #2D2937;
-    color: #AA92FB!important;
+/* navbar */
+.navbar,
+.navbar a {
+  background-color: #2d2937;
+  color: #aa92fb !important;
 }
 
-h3 > span:first-of-type{
-    font-size: 0.5em;
+/* h3 styling */
+h3 > span:first-of-type {
+  font-size: 0.5em;
 }
 
-h3 a, h3 i{
-    color: #AA92FB;
+h3 a,
+h3 i {
+  color: #aa92fb;
 }
 
-h3 a:hover{
-    color: #40537A;
-    text-decoration: none;
+h3 a:hover {
+  color: #40537a;
+  text-decoration: none;
 }
 
-
-#row #topRow td, #row td:nth-child(1){
-    background-color: #2D2937!important;
-    color: #AA92FB!important;
-    text-align: center;
-    border: 1px solid #AA92FB;
-    font-weight: bold;
-    width: 5px;
-
+/* button  */
+.btn-default {
+  background-color: #aa92fb !important;
+  color: #2d2937 !important;
 }
 
-#row td{
-    background-color: #ddd5f9;
-    color: #40537A;
-    text-align: center;
-    width: 5px;
-    height: 5px;
+/* form validation  */
+
+.red {
+  color: #dc3545;
 }
 
-#row tr:nth-child(2n) td:nth-of-type(2n){
-    background-color: #f9f7ff;
-    text-align: center;
+/* dynamic table styling */
 
+.main-table {
+  overflow-x: scroll;
 }
 
-#row tr:nth-child(2n+1) td:nth-of-type(2n+1){
-    background-color: #f9f7ff;
-    text-align: center;
+.table #td {
+  padding: 0.5rem !important;
 }
 
-.btn-default{
-    background-color: #AA92FB!important;
-    color: #2D2937!important;
+#row #topRow td,
+#row td:nth-child(1) {
+  background-color: #2d2937 !important;
+  color: #aa92fb !important;
+  text-align: center;
+  border: 1px solid #aa92fb;
+  font-weight: bold;
+  width: 5px;
 }
 
-.red{
-    border-color: #dc3545!important;
-    color: #dc3545;
+#row td {
+  background-color: #ddd5f9;
+  color: #40537a;
+  text-align: center;
+  width: 5px;
+  height: 5px;
 }
 
-.green{
-    border-color: green!important;
+/* table grid color alternation */
+#row tr:nth-child(2n) td:nth-of-type(2n) {
+  background-color: #f9f7ff;
+  text-align: center;
 }
 
-
-.valid{
-    width: 100%;
-    margin-top: .25rem;
-    font-size: 80%;
-}
-
-.main-table{
-    overflow-x: scroll;
-}
-
-.table #td{
-    padding: 0.5rem!important;
+#row tr:nth-child(2n + 1) td:nth-of-type(2n + 1) {
+  background-color: #f9f7ff;
+  text-align: center;
 }

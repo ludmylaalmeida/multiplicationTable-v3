@@ -1,7 +1,13 @@
+//  Assignment: Creating an Interactive Dynamic Table
+//  File: main.js
+//  Ludmyla Almeida, UMass Lowell Computer Science, ludmyla_almeida@student.uml.edu
+//  Copyright (c) 2019 by Ludmyla Almeida. All rights reserved. 
+
 function validateForm(e) {
   let x = document.getElementById(e);
   let val = x.value;
 
+  //invalid if 
   if(val.length < 1 || val.indexOf(" ") > -1){
     x.classList.remove("is-valid");
     x.classList.add("is-invalid");
@@ -38,7 +44,7 @@ function checkValidation() {
   }
 }
 
-// Bootstrap function 
+// Bootstrap function taken from : https://getbootstrap.com/docs/4.3/components/forms/#validation
 (function() {
   "use strict";
   window.addEventListener(
@@ -82,6 +88,7 @@ function displayTable() {
   let largest_vr = Math.max(vr1, vr2);
   let smallest_vr = Math.min(vr1, vr2);
 
+  // if table is too big, scroll will be enabled
   if( largest_hr > 20 || largest_vr > 20){
     document.getElementById("tooMany").innerText = "If there are many items, table becomes scrollable"
   }
