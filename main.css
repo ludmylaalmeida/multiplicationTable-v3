@@ -42,8 +42,10 @@ h3 a:hover {
 
 /* form validation  */
 
-.red {
+.error {
   color: #dc3545;
+  font-size: small;
+  margin-top: 5px;
 }
 
 /* dynamic table styling */

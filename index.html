@@ -1,5 +1,5 @@
 <!--
- Assignment: Creating an Interactive Dynamic Table
+ Assignment: Using the jQuery Validation Plugin with Your Dynamic Table
  File: index.html
  Ludmyla Almeida, UMass Lowell Computer Science, ludmyla_almeida@student.uml.edu
  Copyright (c) 2019 by Ludmyla Almeida. All rights reserved. 
@@ -42,30 +42,27 @@
                   <label>Horizontal Axis Range</label>
                   <div class="form-row">
                      <div class="col-2">
-                        <input type="text" class="form-control" id="hr1" onkeyup="validateForm('hr1')" required />
-                        <div class="invalid-feedback">Input must be a number that range from -50 to 50</div>
+                        <input type="text" class="form-control" name="hr1" id="hr1" required />
                      </div>
                      <div class="col-2">
-                        <input type="text" class="form-control" id="hr2" onkeyup="validateForm('hr2')" required />
-                        <div class="invalid-feedback">Input must be a number that range from -50 to 50</div>
+                        <input type="text" class="form-control" name="hr2" id="hr2" required />
                      </div>
                   </div>
                </div>
                <div class="form-group">
                   <h6>Vertical Axis Range</h6>
                   <div class="form-row">
-                     <div class="col-2">
-                        <input type="text" class="form-control" id="vr1" onkeyup="validateForm('vr1')" required />
-                        <div class="invalid-feedback">Input must be a number that range from -50 to 50</div>
+                     <div class="col-2 form-div">
+                        <input type="text" class="form-control" name="vr1" id="vr1" required />
                      </div>
                      <div class="col-2">
-                        <input type="text" class="form-control" id="vr2" onkeyup="validateForm('vr2')" required />
-                        <div class="invalid-feedback">Input must be a number that range from -50 to 50</div>
+                        <input type="text" class="form-control" name="vr2" id="vr2" required />
                      </div>
                   </div>
                </div>
+               <!-- onclick="checkValidation(); return false" onkeyup="validateForm('vr2')"-->
                <button id="submit" class="btn btn-default" type="submit"
-                  onclick="checkValidation(); return false">Submit</button>
+                  >Submit</button>
                <p id="submitValidation" class="red mt-2"></p>
             </form>
             <!-- form ends -->
@@ -79,7 +76,10 @@
             </table>
          </div>
       </div>
-      <!-- Vanilla Javascript -->
+      <!-- jQuery Minified -->
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
       <script src="main.js"></script>
    </body>
 </html>
