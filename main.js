@@ -3,28 +3,29 @@
 //  Ludmyla Almeida, UMass Lowell Computer Science, ludmyla_almeida@student.uml.edu
 //  Copyright (c) 2019 by Ludmyla Almeida. All rights reserved.
 
+/* this method uses the jquery plugin */
 $(document).ready(function() {
   $("#form").validate({
     rules: {
       hr1: {
         required: true,
         number: true,
-        range: [-50,50]
+        range: [-50, 50]
       },
       hr2: {
         required: true,
         number: true,
-        range: [-50,50]
+        range: [-50, 50]
       },
       vr1: {
         required: true,
         number: true,
-        range: [-50,50]
+        range: [-50, 50]
       },
       vr2: {
         required: true,
         number: true,
-        range: [-50,50]
+        range: [-50, 50]
       }
     },
     messages: {
@@ -46,22 +47,20 @@ $(document).ready(function() {
       }
     },
     highlight: function(element) {
-      $(element)
-        .addClass("is-invalid");
+      $(element).addClass("is-invalid");
     },
     unhighlight: function(element) {
-      $(element)
-        .removeClass("is-invalid");
-      $(element)
-      .addClass("is-valid");
+      $(element).removeClass("is-invalid");
+      $(element).addClass("is-valid");
     },
-    submitHandler: function(){
-      displayTable()
+    // if its valid submit 
+    submitHandler: function() {
+      displayTable();
     }
-
   });
 });
 
+/* function to display the table */
 function displayTable() {
   //get elements from horizontal axis
   let hr1 = $("#hr1").val();
