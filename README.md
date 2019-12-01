@@ -1,6 +1,6 @@
-<h6 align="center">
+<h1 align="center">
   Multiplication Table Generator- v2
-</h6>
+</h1>
 <p align="center">
   The second iteration of <a href="https://ludmylaalmeida.github.io/multiplicationTable-v2/" target="_blank">Multiplication Table Generator - v2</a> built with HTML5, CSS and jQuery
 </p>
