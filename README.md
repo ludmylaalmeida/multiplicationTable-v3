@@ -1,11 +1,12 @@
-# Multiplication Table Generator
+# Multiplication Table Generator - v2
 
 <h6 align="center">
-  Multiplication Table Generator- v1
+  Multiplication Table Generator- v2
 </h6>
 <p align="center">
-  The first iteration of <a href="https://ludmylaalmeida.github.io/multiplicationTable/index.html" target="_blank">Multiplication Table Generator</a> built with HTML5, CSS and Vanilla Javascript
+  The second iteration of <a href="https://ludmylaalmeida.github.io/multiplicationTable-v2/" target="_blank">Multiplication Table Generator - v2</a> built with HTML5, CSS and jQuery
 </p>
+<p>Previous Iteration: <a href="https://ludmylaalmeida.github.io/multiplicationTable/index.html" target="_blank" >v1</a></p>
 
 ![demo](https://github.com/ludmylaalmeida/multiplicationTable/blob/master/image.png?raw=true)
 
@@ -16,4 +17,3 @@
 | Lilac          | `#AA92FB` |
 | Dark Purple    | `#2D2937` |
 | Ligth Grey     | `#f9f7ff` |
-# multiplicationTable-v2
