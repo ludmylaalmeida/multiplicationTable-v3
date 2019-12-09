@@ -6,7 +6,7 @@
 </p>
 <p align="center">Previous Iteration: <a href="https://github.com/ludmylaalmeida/multiplicationTable" target="_blank" >v1</a>, <a href="https://github.com/ludmylaalmeida/multiplicationTable-v2" target="_blank" >v2</a></p>
 
-![demo](https://github.com/ludmylaalmeida/multiplicationTable/blob/master/image.png?raw=true)
+![demo](https://github.com/ludmylaalmeida/multiplicationTable-v3/blob/master/demo.png?raw=true)
 
 ## 🎨 Color Reference
 
