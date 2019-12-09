@@ -1,10 +1,15 @@
-//  Assignment: Using the jQuery Validation Plugin with Your Dynamic Table
-//  File: main.js
-//  Ludmyla Almeida, UMass Lowell Computer Science, ludmyla_almeida@student.uml.edu
-//  Copyright (c) 2019 by Ludmyla Almeida. All rights reserved.
+/*  Assignment 8: Using the jQuery UI Slider and Tab Widgets
+    File: main.js
+    Ludmyla Almeida, UMass Lowell Computer Science, ludmyla_almeida@student.uml.edu
+    Copyright (c) 2019 by Ludmyla Almeida. All rights reserved.
+*/
 
-/* this method uses the jquery plugin */
+// tabCounter
+var tabCounter = 1;
+
+/* this function validates the form */
 $(document).ready(function() {
+  /* this method uses the jquery plugin */
   $("#form").validate({
     rules: {
       hr1: {
@@ -39,7 +44,7 @@ $(document).ready(function() {
       },
       vr1: {
         required: "This field is required",
-        number: "Please enter a valid number"
+        number: "Please enter a val number"
       },
       vr2: {
         required: "This field is required",
@@ -53,47 +58,221 @@ $(document).ready(function() {
       $(element).removeClass("is-invalid");
       $(element).addClass("is-valid");
     },
-    // if its valid submit 
+    // if its valid submit
     submitHandler: function() {
-      displayTable();
+      createTab();
+      event.preventDefault(); // prevents form from losing input data
     }
   });
 });
 
-/* function to display the table */
-function displayTable() {
-  //get elements from horizontal axis
+$(document).ready(function() {
+  let vr1 = $("#vr1").val();
+  let vr2 = $("#vr2").val();
+  let hr1 = $("#hr1").val();
+  let hr2 = $("#hr2").val();
+  staticTable(hr1, hr2, vr1, vr2);
+
+  updateSlider();
+  // this selects all the inputs in the form
+  updateStaticTable();
+});
+
+function updateStaticTable() {
+  document.querySelectorAll("input").forEach(item => {
+    item.addEventListener("keyup", function() {
+      var validator = $("#form").validate();
+      /* This makes sure the form is valid  before chaging the static table */
+      if (validator.form()) {
+        let vr1 = $("#vr1").val();
+        let vr2 = $("#vr2").val();
+        let hr1 = $("#hr1").val();
+        let hr2 = $("#hr2").val();
+        staticTable(hr1, hr2, vr1, vr2);
+      }
+    });
+  });
+  document.querySelectorAll(".slider").forEach(item => {
+    item.addEventListener("click", function() {
+      var validator = $("#form").validate();
+      /* This makes sure the form is valid  before chaging the static table */
+      if (validator.form()) {
+        let vr1 = $("#vr1").val();
+        let vr2 = $("#vr2").val();
+        let hr1 = $("#hr1").val();
+        let hr2 = $("#hr2").val();
+        if(vr1 > 10 || vr2 > 10 || hr1 > 10|| hr2 > 10){
+
+        }
+        staticTable(hr1, hr2, vr1, vr2);
+      }
+    });
+  });
+}
+
+/* slider using jquery ui */
+$(function slider() {
+  $("#hr1-slider").slider({
+    range: "max",
+    min: -50,
+    max: 50,
+    value: 0,
+    slide: function(event, ui) {
+      $("#hr1").val(ui.value);
+    }
+  });
+  $("#hr2-slider").slider({
+    range: "max",
+    min: -50,
+    max: 50,
+    slide: function(event, ui) {
+      $("#hr2").val(ui.value);
+    }
+  });
+  $("#vr1-slider").slider({
+    range: "max",
+    min: -50,
+    max: 50,
+    slide: function(event, ui) {
+      $("#vr1").val(ui.value);
+    }
+  });
+  $("#vr2-slider").slider({
+    range: "max",
+    min: -50,
+    max: 50,
+    slide: function(event, ui) {
+      $("#vr2").val(ui.value);
+    }
+  });
+});
+
+function updateSlider() {
+  /* update slider while typing */
+  $("#hr1").on("keyup", function() {
+    $("#hr1-slider").slider("value", this.value);
+  });
+  $("#hr2").on("keyup", function() {
+    $("#hr2-slider").slider("value", this.value);
+  });
+  $("#vr1").on("keyup", function() {
+    $("#vr1-slider").slider("value", this.value);
+  });
+  $("#vr2").on("keyup", function() {
+    $("#vr2-slider").slider("value", this.value);
+  });
+}
+
+/*
+  This function creates the tab and calls the function to create the table, it also takes care of removing the tab
+*/
+function createTab() {
+  /* get values from input */
+  let vr1 = $("#vr1").val();
+  let vr2 = $("#vr2").val();
   let hr1 = $("#hr1").val();
   let hr2 = $("#hr2").val();
 
+  /* create tab using jquery ui */
+  var tabs = $("#tabs").tabs({});
+
+  var tabTemplate =
+      "<li><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close active' role='presentation'>Remove Tab</span></li>",
+    tableTemplate =
+      "<table id='row-" +
+      tabCounter +
+      "' class='table col-6'><tr id='topRow-" +
+      tabCounter +
+      "' class=''></tr></table>";
+
+  /* this section of adds a new tab */
+  var label = hr1 + " to " + hr2 + " by " + vr1 + " to " + vr2,
+    id = "tabs-" + tabCounter,
+    li = $(
+      tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label)
+    ),
+    tabContentHtml = tableTemplate;
+
+  tabs.find(".ui-tabs-nav").append(li);
+  tabs.append("<div id='" + id + "'><p>" + tabContentHtml + "</p></div>");
+  tabs.tabs("refresh");
+  tabCounter++;
+  $("#tabs").tabs("option", "active", -1);
+  /* calls the function to create the table inside the new tab */
+  tableInTab(hr1, hr2, vr1, vr2);
+
+  /* Close icon: removing the tab on click */
+  tabs.on("click", "span.ui-icon-close", function() {
+    var panelId = $(this)
+      .closest("li")
+      .remove()
+      .attr("aria-controls");
+    $("#" + panelId).remove();
+    tabs.tabs("refresh");
+  });
+
+  tabs.on("keyup", function(event) {
+    if (event.altKey && event.keyCode === $.ui.keyCode.BACKSPACE) {
+      var panelId = tabs
+        .find(".ui-tabs-active")
+        .remove()
+        .attr("aria-controls");
+      $("#" + panelId).remove();
+      tabs.tabs("refresh");
+    }
+  });
+}
+
+/* function to display the table */
+function tableInTab(hr1, hr2, vr1, vr2) {
   //find smallest and largest number
   let largest_hr = Math.max(hr1, hr2);
   let smallest_hr = Math.min(hr1, hr2);
-
-  //get elements from vertical axis
-  let vr1 = $("#vr1").val();
-  let vr2 = $("#vr2").val();
-
-  // find smallest and largest number
   let largest_vr = Math.max(vr1, vr2);
   let smallest_vr = Math.min(vr1, vr2);
 
-  // if table is too big, scroll will be enabled
-  if (largest_hr > 20 || largest_vr > 20) {
-    $("#tooMany").html("If there are many items, table becomes scrollable");
-  }
+  let tableId = "topRow-" + (tabCounter - 1);
+  let rowId = "row-" + (tabCounter - 1);
 
-  // create two arrays
-  let hr_array = [];
-  let vr_array = [];
+  createTable(tableId, rowId, largest_hr, smallest_hr, largest_vr, smallest_vr);
+}
 
-  // clear table after resubmit
-  let clear = document.getElementsByTagName("tr");
+function staticTable(hr1, hr2, vr1, vr2) {
+  //find smallest and largest number
+  let largest_hr = Math.max(hr1, hr2);
+  let smallest_hr = Math.min(hr1, hr2);
+  let largest_vr = Math.max(vr1, vr2);
+  let smallest_vr = Math.min(vr1, vr2);
+
+  //clear table after resubmit
+  let clear = $("#row tr");
   for (let i = 0; i < clear.length; i++) {
     clear[i].innerHTML = "";
   }
 
-  let tb_header = document.getElementById("topRow");
+  createTable(
+    "topRow",
+    "row",
+    largest_hr,
+    smallest_hr,
+    largest_vr,
+    smallest_vr
+  );
+}
+
+function createTable(
+  id1,
+  id2,
+  largest_hr,
+  smallest_hr,
+  largest_vr,
+  smallest_vr
+) {
+  // create two arrays
+  let hr_array = [];
+  let vr_array = [];
+
+  let tb_header = document.getElementById(id1);
   let x = tb_header.insertCell();
   x.innerHTML = "x";
   //get the array for the horizontal and add that row
@@ -103,7 +282,7 @@ function displayTable() {
     x.innerHTML = i;
   }
 
-  let row = document.getElementById("row");
+  let row = document.getElementById(id2);
   //get the array for the vertical
   for (let i = smallest_vr; i <= largest_vr; i++) {
     vr_array.push(i);
@@ -121,3 +300,24 @@ function displayTable() {
     }
   }
 }
+
+$(document).ready(function() {
+  $("#clear").on("click", function() {
+    if (tabCounter > 1) {
+      $("#tabs").tabs("destroy");
+    }
+
+    //clear table after resubmit
+    for (let i = tabCounter - 1; i > 0; i--) {
+      let tr = $("#row-" + i + " tr");
+      let ul = $("ul");
+      // remove all the tr
+      for (let j = 0; j < tr.length; j++) {
+        tr[j].innerHTML = "";
+      }
+      for (let j = 0; j < ul.length; j++) {
+        ul[j].innerHTML = "";
+      }
+    }
+  });
+});
