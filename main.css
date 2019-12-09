@@ -9,13 +9,13 @@
 html body {
   color: #2d2937;
   font-family: "Nunito", sans-serif;
-  overflow-x: hidden!important;
+  overflow-x: hidden !important;
 }
 
-.navbar-light .navbar-text{
+.navbar-light .navbar-text {
   /* font-family: 'Roboto Mono', monospace; */
   /* font-size: 14px; */
-  color:#aa92fb!important;
+  color: #aa92fb !important;
 }
 
 /* navbar */
@@ -25,13 +25,13 @@ html body {
   color: #aa92fb !important;
 }
 
-.btn-outline{
-  border: 1px solid #aa92fb!important;
+.btn-outline {
+  border: 1px solid #aa92fb !important;
 }
 
-.btn-outline:hover{
+.btn-outline:hover {
   background: #aa92fb;
-  color: #FFF!important;
+  color: #fff !important;
 }
 
 /* h3 styling */
@@ -56,10 +56,9 @@ h3 a:hover {
   font-weight: bold;
 }
 
-.clear-btn{
-  border: 1px solid #2d2937!important;
-  color: #2d2937!important;
-
+.clear-btn {
+  border: 1px solid #2d2937 !important;
+  color: #2d2937 !important;
 }
 
 /* form validation  */
@@ -71,11 +70,6 @@ h3 a:hover {
 }
 
 /* dynamic table styling */
-
-/* .main-table {
-  overflow-x: scroll;
-} */
-
 .table #td {
   padding: 0.5rem !important;
 }
@@ -110,7 +104,6 @@ tr:nth-child(2n + 1) td:nth-of-type(2n + 1) {
 }
 
 /* jquery ui modifications */
-
 .ui-slider {
   margin-top: 1em;
 }
@@ -136,25 +129,6 @@ tr:nth-child(2n + 1) td:nth-of-type(2n + 1) {
   background: #333940;
 }
 
-/* range tooltip  */
-.output {
-  display: block;
-  position: absolute;
-  height: 60px;
-  line-height: 60px;
-  min-width: 32px;
-  padding: 0 20px;
-  /* -webkit-transform: translate(-50%, -100%);
-  transform: translate(-50%, -100%); */
-  background: #383c42;
-  color: #fff;
-  border-radius: 100px;
-  white-space: nowrap;
-  font-weight: bold;
-  font-size: 1.2em;
-  text-align: center;
-}
-
 /* style for tabs */
 #tabs {
   margin-top: 1em;
@@ -162,9 +136,6 @@ tr:nth-child(2n + 1) td:nth-of-type(2n + 1) {
 #tabs li .ui-icon-close {
   float: left;
   /* margin: 0.4em 0.2em  0 0; */
-  cursor: pointer;
-}
-#add_tab {
   cursor: pointer;
 }
 
@@ -210,23 +181,23 @@ tr:nth-child(2n + 1) td:nth-of-type(2n + 1) {
 }
 
 /* make table scrollable */
-.scroll{
-  overflow-x: scroll!important;
-  overflow-y: scroll!important;
+.scroll {
+  overflow-x: scroll !important;
+  overflow-y: scroll !important;
   max-height: 600px;
 }
 
-.ui-tabs .ui-tabs-panel{
-  overflow-x : scroll;
+.ui-tabs .ui-tabs-panel {
+  overflow-x: scroll;
 }
 
 /* scroll bar style */
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 2px;
   height: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background-color: rgba(0,0,0,.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
