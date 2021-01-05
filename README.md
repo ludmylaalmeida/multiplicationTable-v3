@@ -15,3 +15,14 @@
 | Lilac          | `#AA92FB` |
 | Dark Purple    | `#2D2937` |
 | Ligth Grey     | `#f9f7ff` |
+
+<p>This project is an assignment from Graphical User Interface I at UMASS Lowell</br>
+ Ludmyla Almeida, UMass Lowell Computer Science, ludmyla_almeida@student.uml.edu</br>
+ Copyright (c) 2019 by Ludmyla Almeida. All rights reserved.</p>
+
+
+
+## 🚨 Forking this repo
+
+<p>This code cannot be used for college assignments. I value keeping this code on github as part of my portfolio, but as you all know, <b>plagiarism is bad</b>. I spent a non-negligible amount of effort developing and designing this project and I am proud of it! All I ask is to not claim this effort as your own.</p>
+
